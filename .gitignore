@@ -1,3 +1,9 @@
+# Files
+*.js
+*.js.map
+!systemjs.config.js
+!typings/typings.d.ts
+
 # Logs
 logs
 *.log
