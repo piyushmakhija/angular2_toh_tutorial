@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
+import {PolymerElement} from '@vaadin/angular2-polymer'
 import {HttpModule} from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -28,10 +29,15 @@ import { routing } from './app.routing';
 		AppComponent,
 		HeroesComponent,
 		HeroDetailComponent,
-		DashboardComponent
+		DashboardComponent,
+		PolymerElement('app-header-layout'),
+		PolymerElement('app-header'),
+		PolymerElement('app-toolbar')
+		// PolymerElement('paper-element')
 	],
 	providers: [HeroService],
-	bootstrap: [ AppComponent ]
+	bootstrap: [ AppComponent ],
+	schemas:[ CUSTOM_ELEMENTS_SCHEMA ]
 })
 
 export class AppModule {}
